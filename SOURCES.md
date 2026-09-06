@@ -13,3 +13,5 @@ JPG files are unaltered frames extracted from these originals. No stock or AI-ge
 Other shared clips, including the older 31 August video, were not needed for this selected gallery and are not represented as downloaded.
 No fabricated reviews, ratings, warranties, discounts, installation times, credentials, years of experience, chemical performance, or service radius.
 All calls to action open a visitor-initiated conversation; no messages sent to Juanca.
+
+Redesign: the hero garage-inspiration.png is an AI-generated architectural visualization, visibly labeled DESIGN INSPIRATION / AI VISUALIZATION. It is not represented as a client project. Actual project videos remain unchanged. Barlow Condensed 800 and Manrope 400/700 fonts downloaded from Google Fonts, served locally. Brand typography is an approximation of the supplied vehicle lettering; vivid blue and red accents follow that branding.
