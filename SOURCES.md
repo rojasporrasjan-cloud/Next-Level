@@ -15,3 +15,5 @@ No fabricated reviews, ratings, warranties, discounts, installation times, crede
 All calls to action open a visitor-initiated conversation; no messages sent to Juanca.
 
 Redesign: the hero garage-inspiration.png is an AI-generated architectural visualization, visibly labeled DESIGN INSPIRATION / AI VISUALIZATION. It is not represented as a client project. Actual project videos remain unchanged. Barlow Condensed 800 and Manrope 400/700 fonts downloaded from Google Fonts, served locally. Brand typography is an approximation of the supplied vehicle lettering; vivid blue and red accents follow that branding.
+
+Editorial refinement references (design/content organization only; no client claims or assets copied): Black Diamond Garages epoxy-floor-coating; Epoxy Pros; San Diego Premier Epoxy; Park via Awwwards; Riddle Epoxy; GarageFloorCoating.com. Applied material closeups, clear photo hierarchy, offset project gallery, and shorter copy.
