@@ -677,7 +677,7 @@ summary:focus-visible {
   border-radius: 10px;
   box-shadow: 20px 20px 0 #e9eef8;
 }
-.process-video video {
+.process-video video, .process-video .film-poster {
   width: 100%;
   height: 510px;
   object-fit: contain;
@@ -916,7 +916,7 @@ footer .brand small { font-size: 10px; }
 
   .about { grid-template-columns: 1fr; gap: 30px; }
   .about h2 { font-size: 54px; }
-  .process-video video { height: 460px; }
+  .process-video video, .process-video .film-poster { height: 460px; }
   .process-video .film { box-shadow: 10px 10px 0 #e9eef8; }
 
   .start { grid-template-columns: 1fr; gap: 35px; }
@@ -967,10 +967,10 @@ footer .brand small { font-size: 10px; }
 .stage-grid, .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 22px; }
 .gallery-card { display: block; min-width: 0; border-radius: 10px; }
 .gallery-image { position: relative; overflow: hidden; border-radius: 10px; background: #1c2433; border: 1px solid #ffffff20; }
-.gallery-image picture { height: 100%; }
-.gallery-image img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-.gallery-card:hover .gallery-image img { transform: scale(1.035); }
-.gallery-stage .gallery-image img { aspect-ratio: 3 / 4; }
+.gallery-image { aspect-ratio: 4 / 5; }
+.gallery-image picture { width: 100%; height: 100%; }
+.gallery-image img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-stage .gallery-image { aspect-ratio: 3 / 4; }
 .gallery-badge { position: absolute; left: 14px; top: 14px; border: 1px solid #ffffff40; border-radius: 4px; background: #0c1422dd; color: #fff; padding: 8px 12px; font-size: 12px; letter-spacing: 1px; }
 .gallery-stage:last-child .gallery-badge { background: #244ee8; }
 .gallery-open { position: absolute; bottom: 16px; right: 16px; display: grid; place-items: center; width: 44px; height: 44px; background: #ffffffeb; color: #142039; border-radius: 50%; transition: background .2s, color .2s; }
@@ -1001,7 +1001,8 @@ footer .brand small { font-size: 10px; }
   .brand-logo { width: 126px; }
   .header:has(.brand-logo) { gap: 16px; }
   .stage-grid { grid-template-columns: 1fr; gap: 28px; }
-  .gallery-stage .gallery-image img { aspect-ratio: 4 / 3; object-position: center 62%; }
+  .gallery-stage .gallery-image { aspect-ratio: 4 / 3; }
+  .gallery-stage .gallery-image img { object-position: center 62%; }
   .gallery-grid { gap: 26px 14px; }
   .gallery-caption h3 { font-size: 16px; }
   .gallery-caption p { font-size: 13px; }

@@ -26,9 +26,12 @@ const projects: ProjectMedia[] = [
 const media = [...stages, ...projects];
 
 function GalleryPhoto({ item }: { item: ProjectMedia }) {
+  const sizes = item.stage
+    ? '(max-width: 700px) 88vw, 29vw'
+    : '(max-width: 370px) 88vw, (max-width: 900px) 43vw, 29vw';
   return <picture>
-    <source srcSet={`/media/${item.name}.avif`} type="image/avif" />
-    <img src={`/media/${item.name}.webp`} alt={item.alt} width={800} height={1100} loading="lazy" decoding="async" />
+    <source srcSet={`/media/${item.name}-480.avif 480w, /media/${item.name}-800.avif 800w`} sizes={sizes} type="image/avif" />
+    <img src={`/media/${item.name}-800.webp`} srcSet={`/media/${item.name}-480.webp 480w, /media/${item.name}-800.webp 800w`} sizes={sizes} alt={item.alt} width={800} height={1100} loading="lazy" decoding="async" />
   </picture>;
 }
 

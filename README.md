@@ -59,6 +59,20 @@ no son ciertos.
 
 ## Medios
 
+Las tarjetas tienen dimensiones reservadas y no usan animaciones de opacidad al
+entrar en pantalla. La galería selecciona miniaturas de 480 u 800 px según el
+tamaño de pantalla; las fotos completas solo se abren en el visor. Regenerá las
+miniaturas con `python scripts/prepare-gallery-thumbnails.py` después de editar
+los originales o las fotos de la galería.
+
+Ningún reproductor ni fuente MP4 se monta hasta que la persona pulsa reproducir.
+Los nueve videos conservan su calidad de origen (H.264, 1024×576, aproximadamente
+0.84–1.41 Mbps) y tienen los metadatos antes del contenido para iniciar sin
+descargar el archivo completo. `vercel.json` permite reutilizar los medios en
+caché durante un día; no usa caché inmutable para fotos/videos que pueden cambiar.
+Esto reduce transferencias repetidas, pero el consumo total depende de las
+visitas, reproducciones y del comportamiento de caché del navegador.
+
 Los vídeos son material real de obra. La imagen del hero es una visualización
 generada con IA y está etiquetada como tal en la página.
 
