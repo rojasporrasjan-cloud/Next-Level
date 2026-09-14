@@ -1,7 +1,6 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
-  ...(process.env.NEXT_LEVEL_STATIC_EXPORT === '1' ? { output: 'export' as const } : {}),
-};
+const nextConfig: NextConfig =
+  process.env.NEXT_LEVEL_STATIC_EXPORT === '1' ? { output: 'export' } : {};
 
 export default nextConfig;

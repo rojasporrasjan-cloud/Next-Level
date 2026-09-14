@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Play } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export function VisualEffects() {
   const progress = useRef<HTMLDivElement>(null);
@@ -30,7 +29,7 @@ export function VisualEffects() {
         observer.unobserve(entry.target);
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.section-head, .service-row article, .project-grid figure, .about-copy, .process-video, .start li, .contact h2').forEach(element => observer.observe(element));
+    document.querySelectorAll('.section-head, .service-row article, .project-grid figure, .gallery-card, .about-copy, .process-video, .start li, .contact h2').forEach(element => observer.observe(element));
     const stopMotion = () => { if (preference.matches) animations.forEach(animation => animation.cancel()); };
     preference.addEventListener('change', stopMotion);
     return () => {
@@ -53,7 +52,11 @@ export function ProjectFilm({ src, poster, label }: { src: string; poster: strin
     try { await video.current?.play(); } catch { /* Native controls remain available if playback is blocked. */ }
   };
   return <div className={`film ${started ? 'film-started' : ''}`}>
-    <video ref={video} controls playsInline muted preload="none" poster={poster} aria-label={label}><source src={src} type="video/mp4" /><a href={src}>Watch project video</a></video>
-    {!started && <Button className="film-play" onClick={play} aria-label={`Play ${label}`}><span className="film-play-icon"><Play fill="currentColor" aria-hidden="true" /></span><span>WATCH THE PROJECT</span></Button>}
+    {/* Los controles nativos aparecen recién al arrancar: antes se pintaban por
+        encima del overlay y duplicaban el botón de play. Hasta entonces el único
+        control es el <button>, que sí es accesible por teclado.
+        onPlay cubre cualquier arranque que no venga de ese botón. */}
+    <video ref={video} controls={started} playsInline muted preload="none" poster={poster} aria-label={label} onPlay={() => setStarted(true)}><source src={src} type="video/mp4" /><a href={src}>Watch project video</a></video>
+    {!started && <button type="button" className="film-play" onClick={play} aria-label={`Play ${label}`}><span className="film-play-icon"><Play fill="currentColor" aria-hidden="true" /></span><span>WATCH THE PROJECT</span></button>}
   </div>;
 }
